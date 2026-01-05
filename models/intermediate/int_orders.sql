@@ -1,5 +1,3 @@
-int_orders.sql
-
 with orders as (
 
     select * from {{ ref('stg_sales__orders') }}
