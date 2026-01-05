@@ -4,26 +4,36 @@ with int_stocks as (
 
 ),
 
-aggregate_stocks_info as (
+int_stores as (
+
+    select * from {{ ref('int_stores') }}
+
+),
+
+int_products as (
+
+    select * from {{ ref('int_products') }}
+
+),
+
+measures_and_dimension_info as (
     
     select
-        sum(int_stock.stock_quantity) as stock_quantity,
-        max(int_stock.product_name) as product_name,
-        max(int_stock.brand_name) brand_name,
-        max(int_stock.category_name) as category_name,
-        max(int_stock.store_name) as store_name,
-        max(int_stock.store_phone) as store_phone,
-        max(int_stock.store_email) as store_email,
-        max(int_stock.store_street) as store_street,
-        max(int_stock.store_city) as store_city,
-        max(int_stock.store_state) as store_state,
-        max(int_stock.store_zip_code) as store_zip_code
+        int_store.store_name as store_name,
+        int_store.store_phone as store_phone,
+        int_store.store_email as store_email,
+        int_store.store_street as store_street,
+        int_store.store_city as store_city,
+        int_store.store_state as store_state,
+        int_store.store_zip_code as store_zip_code,
+        int_product.product_name as product_name,
+        int_product.product_brand as product_brand,
+        int_product.product_category as product_category,
+        int_stock.stock_quantity as stock_quantity
     from 
-        int_stocks int_stock
-    group by
-        int_stock.product_id,
-        int_stock.store_id
+        int_stocks int_stock left join int_stores int_store on int_stock.store_id = int_store.store_id
+        left join int_products int_product on int_stock.product_id = int_product.product_id
 
 )
 
-select * from aggregate_stocks_info
+select * from measures_and_dimension_info
