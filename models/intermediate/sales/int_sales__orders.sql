@@ -17,7 +17,7 @@ get_info_at_order_level as (
         s_order.order_id as order_id,
         max(s_order.order_status) as order_status,
         max(s_order.order_date) as order_date,
-        round(sum(order_item.total_order_item_amount), 2) as total_order_amount,
+        round(sum((order_item.order_item_quantity * order_item.order_item_price) * (1 - order_item.order_item_discount)), 2) as total_order_amount,
         -- customer info
         max(s_order.customer_id) as customer_id,
         -- store info
