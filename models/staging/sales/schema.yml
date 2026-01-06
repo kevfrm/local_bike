@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_sales__brands
-    description: This table contains all bike brands sold in Local Bike stores
+    description: This model contains all bike brands sold in Local Bike stores
     columns:
       - name: brand_id
         description: This is a unique identifier for the brand
@@ -11,7 +11,7 @@ models:
           - not_null
 
   - name: stg_sales__categories
-    description: This table contains all bike categories sold in Local Bike stores
+    description: This model contains all bike categories sold in Local Bike stores
     columns:
       - name: category_id
         description: This is a unique identifier for the category
@@ -20,7 +20,7 @@ models:
           - not_null
 
   - name: stg_sales__customers
-    description: This table contains all Local Bike store customers
+    description: This model contains all Local Bike store customers
     columns:
       - name: customer_id
         description: This is a unique identifier for the customer
@@ -29,7 +29,7 @@ models:
           - not_null
 
   - name: stg_sales__order_items
-    description: This table contains all items included in each command
+    description: This model contains all items included in each command
     columns:
       - name: order_item_id
         description: This is a unique identifier for the order item
@@ -46,7 +46,7 @@ models:
           - not_null
 
   - name: stg_sales__orders
-    description: This table contains all orders
+    description: This model contains all orders
     columns:
       - name: order_id
         description: This is a unique identifier for the order
@@ -67,7 +67,7 @@ models:
           - not_null
 
   - name: stg_sales__products
-    description: This table contains all products sold in Local Bike stores
+    description: This model contains all products sold in Local Bike stores
     columns:
       - name: product_id
         description: This is a unique identifier for the product
@@ -84,7 +84,7 @@ models:
           - not_null
 
   - name: stg_sales__staffs
-    description: This table contains all Local Bike staffs
+    description: This model contains all Local Bike staffs
     columns:
       - name: staff_id
         description: This is a unique identifier for the staff
@@ -99,7 +99,7 @@ models:
         description: This is a unique identifier for the manager
 
   - name: stg_sales__stocks
-    description: This table contains all Local Bike stocks
+    description: This model contains all Local Bike stocks
     columns:
       - name: stock_id
         description: This is a unique identifier for the staff
@@ -114,7 +114,7 @@ models:
         description: This is a unique identifier for the product
 
   - name: stg_sales__stores
-    description: This table contains all Local Bike stores
+    description: This model contains all Local Bike stores
     columns:
       - name: store_id
         description: This is a unique identifier for the store

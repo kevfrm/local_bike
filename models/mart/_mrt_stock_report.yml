@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: mrt_stock_report
+    description: This model lists stock datas

@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: mrt_product_order_report
+    description: This model aggregates sold products datas. It is built in 2 steps. 
+                  Aggregate sold products datas by date, store and product and calculate product_order_quantity and total_product_order_amount.
+                  Then add dimension information thanks to joins
+    columns:
+      - name: product_order_quantity
+        description: This is the total quantity sold for the product
+        data_tests:
+          - not_null
+      - name: total_product_order_amount
+        description: This is the total revenue for the product
+        data_tests:
+          - not_null

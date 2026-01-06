@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: mrt_order_report
+    description: This model aggregates orders datas. It is built in 2 steps. 
+                  Aggregate orders datas by date, store and staff and calculate total_order_amount, average_order_amount and total_orders.
+                  Then add dimension information thanks to joins
+    columns:
+      - name: total_order_amount
+        description: This is the amount of the orders calculated with a sum
+        data_tests:
+          - not_null
+      - name: average_order_amount
+        description: This is the average amount of the orders
+        data_tests:
+          - not_null
+      - name: total_orders
+        description: This is the number of orders calculated with a sum
+        data_tests:
+          - not_null

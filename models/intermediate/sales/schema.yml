@@ -2,10 +2,10 @@ version: 2
 
 models:
   - name: int_sales__customers
-    description: This table contains all customers. No transformation added in this model. It is used as a source for mart models
+    description: This model contains all customers. No transformation added in this model. It is used as a source for mart models
 
   - name: int_sales__order_items
-    description: This table contains information about order items. It provides dimension references (ids) and the only transformation performed is for total_order_item_amount
+    description: This model contains information about order items. It provides dimension references (ids) and the only transformation performed is for total_order_item_amount
     columns:
       - name: total_order_item_amount
         description: This is the result of the calculation quantity * price * (1 - discount)
@@ -13,7 +13,7 @@ models:
           - not_null
 
   - name: int_sales__orders
-    description: This table contains information about orders. It provides dimension references (ids) and the only transformation performed is for total_order_amount
+    description: This model contains information about orders. It provides dimension references (ids) and the only transformation performed is for total_order_amount
     columns:
       - name: total_order_amount
         description: This is the result of the sum of total_order_item_amount grouped by order id
@@ -21,10 +21,10 @@ models:
           - not_null
 
   - name: int_sales__products
-    description: This table contains information about products. The brand and the category of the product are added for each product
+    description: This model contains information about products. The brand and the category of the product are added for each product
 
   - name: int_sales__staffs
-    description: This table contains information about staffs. First name and last name are concatenated
+    description: This model contains information about staffs. First name and last name are concatenated
     columns:
       - name: staff_name
         description: This is the result of the concatenation of first name and last name
@@ -32,7 +32,7 @@ models:
           - not_null
 
   - name: int_sales__stocks
-    description: This table contains all stocks. No transformation added in this model. It is used as a source for mart models
+    description: This model contains all stocks. No transformation added in this model. It is used as a source for mart models
 
   - name: int_sales__stores
-    description: This table contains all stores. No transformation added in this model. It is used as a source for mart models
+    description: This model contains all stores. No transformation added in this model. It is used as a source for mart models
