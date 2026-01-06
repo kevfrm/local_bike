@@ -1,18 +1,18 @@
 with int_order_items as (
 
-    select * from {{ ref('int_order_items') }}
+    select * from {{ ref('int_sales__order_items') }}
 
 ),
 
 int_stores as (
 
-    select * from {{ ref('int_stores') }}
+    select * from {{ ref('int_sales__stores') }}
 
 ),
 
 int_products as (
 
-    select * from {{ ref('int_products') }}
+    select * from {{ ref('int_sales__products') }}
 
 ),
 
