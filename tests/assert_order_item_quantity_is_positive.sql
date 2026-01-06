@@ -1,4 +1,4 @@
 select
-    order_item_quantity
+    order_item_id
 from {{ ref('stg_sales__order_item') }}
-having order_item_quantity < 0
+where order_item_quantity < 0
