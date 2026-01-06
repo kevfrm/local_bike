@@ -18,8 +18,7 @@ renamed as (
         item_id as order_item_number,
         quantity as order_item_quantity,
         list_price as order_item_price,
-        discount as order_item_discount,
-        round((quantity * list_price) * (1 - discount), 2) as total_order_item_amount
+        discount as order_item_discount
 
     from source
 

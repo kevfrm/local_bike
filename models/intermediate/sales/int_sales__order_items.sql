@@ -18,7 +18,7 @@ get_info_at_order_item_level as (
         order_item.order_id as order_id,
         order_item.order_item_discount as order_item_discount,
         order_item.order_item_quantity as order_item_quantity,
-        order_item.total_order_item_amount as total_order_item_amount,
+        round((order_item.order_item_quantity * order_item.order_item_price) * (1 - order_item.order_item_discount), 2) as total_order_item_amount,
         order_item.product_id as product_id,
         -- customer info
         s_order.customer_id as customer_id,
